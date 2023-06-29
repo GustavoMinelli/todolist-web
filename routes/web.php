@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+
+Route::get('/pages', 'App\Http\Controllers\PageController@index');
+Route::get('/pages/create', 'App\Http\Controllers\PageController@create');
+Route::get('/pages/{id}/edit', 'App\Http\Controllers\PageController@edit');
+Route::post('/pages', 'App\Http\Controllers\PageController@insert');
+Route::put('/pages', 'App\Http\Controllers\PageController@update');
+Route::delete('/pages/{id}', 'App\Http\Controllers\PageController@delete');
+
