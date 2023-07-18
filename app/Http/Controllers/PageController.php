@@ -107,9 +107,7 @@ class PageController extends Controller
         $page = Page::find($id);
 
         if ($page) {
-
             $page->delete();
-
         }
 
         return redirect('/pages');

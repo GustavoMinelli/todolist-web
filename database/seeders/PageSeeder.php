@@ -14,7 +14,10 @@ class PageSeeder extends Seeder
     public function run(): void
     {
         $page = new Page();
-        $page->name = 'Home';
+        $page->title = 'Home';
+        $page->slug = 'home';
         $page->user_id = 1;
+
+        $page->save();
     }
 }
